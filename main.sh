@@ -10,7 +10,8 @@ domain=$1
 
  ./ssl "$domain">>x.html  # Correct syntax for calling another script
  url="https://$domain"
- python3 scrap.py "$url" 
+ python3 scrap.py "$url" >> link.txt
  rm x.html
+ ./curl.sh link.txt
 
 
